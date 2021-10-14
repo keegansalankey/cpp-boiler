@@ -6,7 +6,7 @@ import sys
 if __name__ == "__main__":
     argv = sys.argv
     argc = len(argv)
-
+    
     req_version = (3,10)
 
     if (argc == 1):
@@ -16,7 +16,10 @@ if __name__ == "__main__":
     if sys.version_info < req_version:
         print("ERROR: Only python3.10+ is currently supported. Currently using: python{}.{}".format(sys.version_info[0], sys.version_info[1]))
     else:
+        # CLI can only be interpreted by python 3.10 because pattern matching is utilized
         import CLI
+        if argv[0] == "python3.10":
+            argv.pop()
         CLI.parse(argv)
 
     

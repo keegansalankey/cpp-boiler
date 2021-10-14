@@ -11,3 +11,5 @@ test-projects/
 temp.cpp
 
 __pycache__/
+
+*.swp
