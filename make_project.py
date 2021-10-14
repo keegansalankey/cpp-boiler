@@ -3,22 +3,21 @@ import os
 import re
 import shutil
 import fileinput
+import utilities
 
-def insert_project_name(name, location):
-    with fileinput.FileInput(location, inplace=True, backup='.bak') as file:
-        for line in file:
-            print(line.replace('<<replace_me>>', name), end='')
+###### NOTE: Currently under refactor as CLI module is being programmed to reduce functionality in this module
 
-if __name__ == "__main__":
-    argv = sys.argv
+
+def create(argv):
     argc = len(argv)
 
+
     # TODO: print usage instructions at some point 
-    if (argc != 3):
+    if (argc != 2):
         print("ERROR: Please enter two arguments")
         exit(1)
 
-    template_type, project_name = argv[1], argv[2]
+    template_type, project_name = argv[0], argv[1]
 
     ####################################################################################################
     #                                                                                                  # 
@@ -62,13 +61,10 @@ if __name__ == "__main__":
 
     shutil.copytree(template_path, project_path)
 
-    insert_project_name(project_name, project_path + "CMakeLists.txt")
-    if os.path.exists(project_path + "CMakeLists.txt.bak"):
-        os.remove(project_path + "CMakeLists.txt.bak")
+    utilities.insert_project_name(project_name, project_path + "CMakeLists.txt")
 
-    insert_project_name(project_name, project_path + "build.sh")
-    if os.path.exists(project_path + "build.sh.bak"):
-        os.remove(project_path + "build.sh.bak")
+    utilities.insert_project_name(project_name, project_path + "build.sh")
 
     if os.path.exists(project_path + "build/"):
         shutil.rmtree(project_path + "build/")
+

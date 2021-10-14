@@ -9,3 +9,5 @@ test-projects/
 .clang-format
 
 temp.cpp
+
+__pycache__/
