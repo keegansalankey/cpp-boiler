@@ -1,0 +1,10 @@
+.vscode/
+
+bin/
+build/
+
+test-projects/
+
+.clang-format
+
+temp.cpp
