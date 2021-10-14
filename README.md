@@ -24,4 +24,5 @@ boiler-cpp template_type project_name
 1. Implement another template for boiler-plate [openGL](https://www.opengl.org//) code.
 2. Create functionality to add boiler-plate code files to already established projects (i.e. adding classes with header and project files).
 3. Add scripts for debugging to templates.
+4. Add more robust usage instructions to CLI.
  
