@@ -1,7 +1,7 @@
 # cpp-boiler
 **NOTE:** This project is currently waiting to be further expanded/revised, but basic functionality has been achieved.  
   
-This project is intended to generate a boiler-plate c++ project with a default build system and package management. It can also be utilized to generate
+This project is intended to generate a boiler-plate C++ project with a default build system and package management. It can also be utilized to generate
 boiler plate code for class header/project files and generic headers.
 
 ## Dependencies
