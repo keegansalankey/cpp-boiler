@@ -34,16 +34,16 @@ python3.10 ~/cpp-boiler/main.py $@
 ### Creating a new project
 To create a project `project_name` in your current working directory using template type `basic`:
 ```
-python3.10 path/to/cpp_boiler/main.py --create basic project_name
+$ python3.10 path/to/cpp_boiler/main.py --create basic project_name
 ```
 Or, alternatively, for project creation with a `$HOME/bin/` executable:
 ```
-boiler-cpp --create basic project_name
+$ boiler-cpp --create basic project_name
 ```
 ### Adding additional files
 Navigate to the project directory for which you would like to add additional files. To create a new class named `MyClass` with both a header (`.h`) and project (`.cpp`) file, execute the following:
 ```
-python3.10 path/to/cpp_boiler/main.py --add -c MyClass
+$ python3.10 path/to/cpp_boiler/main.py --add -c MyClass
 ```
 The header file will either be placed in a `/include/` directory within the project, if such a directory exists, or will default to being placed in the current working directory. Likewise the project file will be placed in a `/src/` directory, if such a directory exists, or will default to being placed in the current working directory. The created files will already have generated text for macro definitions, `class` declarations, constructors, and `#include` statements.  
   
