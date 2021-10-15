@@ -11,15 +11,14 @@ include_directories( include/)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
-################ UNCOMMENT WHEN FILES ARE ADDED TO SRC AND INCLUDE DIRECTORIES  #####################
+# NOTE: #H_REMOVEME and #CPP_REMOVEME will automatically removed when .h and .cpp files are added using cpp-boiler
 
-#file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
-#add_library(source_files ${SRC_FILES})
+#CPP_REMOVE_ME_file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+#CPP_REMOVE_ME_add_library(source_files ${SRC_FILES})
 
-#file(GLOB INC_FILES ${PROJECT_SOURCE_DIR}/include/*.h)
-#add_library(include_files ${INC_FILES})
+#H_REMOVE_ME_file(GLOB INC_FILES ${PROJECT_SOURCE_DIR}/include/*.h)
+#H_REMOVE_ME_add_library(include_files ${INC_FILES})
 
-####################################################################################################
 
 #Set executable
 add_executable(${PROJECT_NAME}     
@@ -31,7 +30,7 @@ target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_EXTENSIONS OFF)
 
 ######################## UNCOMMENT AFTER ADDING HEADER FILES TO INCLUDE ###########################
-#set_target_properties(include_files PROPERTIES LINKER_LANGUAGE CXX)
+#H_REMOVE_ME_set_target_properties(include_files PROPERTIES LINKER_LANGUAGE CXX)
 
 
 #Set flags
@@ -51,8 +50,6 @@ endif()
 #Finally
 target_link_libraries(${PROJECT_NAME} 
   ${CONAN_LIBS}
-  ##### UNCOMMENT WHEN FILES ARE ADDED TO SRC AND INCLUDE DIRECTORIES #####
-  #include_files
-  #source_files
-  #########################################################################
+  #H_REMOVE_ME_include_files
+  #CPP_REMOVE_ME_source_files
   )

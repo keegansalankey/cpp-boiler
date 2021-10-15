@@ -15,6 +15,7 @@ def add_class(name):
 
     if os.path.isdir(include_path := target_path + "include/"):
         shutil.copyfile(boiler_path + class_h_string, file_path := include_path + file_name_string + ".h")
+        utilities.remove_from_file(target_path + "CMakeLists.txt", "#H_REMOVE_ME_")
     else:
         shutil.copyfile(boiler_path + class_h_string, file_path := target_path + file_name_string + ".h")
 
@@ -23,11 +24,11 @@ def add_class(name):
 
     if os.path.isdir(src_path := target_path + "src/"):
         shutil.copyfile(boiler_path + class_cpp_string, file_path := src_path + file_name_string + ".cpp")
+        utilities.remove_from_file(target_path + "CMakeLists.txt", "#CPP_REMOVE_ME_")
     else:
         shutil.copyfile(boiler_path + class_cpp_string, file_path := target_path + file_name_string + ".cpp")
 
     utilities.insert_project_name(file_name_string, file_path)
-
 
 
 def add_header(name):
@@ -41,6 +42,7 @@ def add_header(name):
 
     if os.path.isdir(include_path := target_path + "include/"):
         shutil.copyfile(boiler_path + header_h_string, file_path := include_path + file_name_string + ".h")
+        utilities.remove_from_file(target_path + "CMakeLists.txt", "#H_REMOVE_ME_")
     else:
         shutil.copyfile(boiler_path + header_h_string, file_path := target_path + file_name_string + ".h")
 
